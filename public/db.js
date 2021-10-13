@@ -9,6 +9,7 @@ export function checkForIndexedDb() {
 export function useIndexedDb(databaseName, storeName, method, object) {
   return new Promise((resolve, reject) => {
     const request = window.indexedDB.open(databaseName, 1);
+
     let db, tx, store;
 
     request.onupgradeneeded = function (e) {
@@ -22,8 +23,8 @@ export function useIndexedDb(databaseName, storeName, method, object) {
 
     request.onsuccess = function (e) {
       db = request.result;
-      tx = db.transaction(storeName, 'readwrite');
-      store = tx.objectStore(storeName);
+      //   tx = db.transaction(storeName, 'readwrite');
+      //   store = tx.objectStore(storeName);
 
       db.onerror = function (e) {
         console.log('error');
