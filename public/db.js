@@ -14,7 +14,7 @@ export function useIndexedDb(databaseName, storeName, method, object) {
 
     request.onupgradeneeded = function (e) {
       const db = request.result;
-      db.createObjectStore(storeName, { keyPath: '_id' });
+      db.createObjectStore("pending"}, { autoIncrement: true });
     };
 
     request.onerror = function (e) {
