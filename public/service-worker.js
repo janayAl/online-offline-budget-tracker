@@ -13,6 +13,7 @@ const FILES_TO_CACHE = [
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
+//installation process//
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
